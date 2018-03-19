@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_ALTER().
+ */
+
+function premium_block_view_premium_status_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block)
+{
+    $build['#pre_render'][] = '_premium_block_premium_prerender';
+
+   // kint($block);
+}
+
+function _premium_block_premium_prerender(array $build)
+{
+    $build['content']['#prefix'] = '<h4>';
+    $build['content']['#suffix'] = '</h4>';
+    $build['content']['#markup'] = 'Mon message modifié';
+    return $build;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function premium_theme($existing, $type, $theme, $path)
+{
+    $variables = array(
+        'amIPremium' => array(
+            'variables' => array(
+                'message' => NULL,
+                'color' => NULL,
+            ),
+            'template' => 'amIPremium',
+        ),
+    );
+    return $variables;
+}

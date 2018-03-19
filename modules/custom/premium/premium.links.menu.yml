@@ -1,0 +1,11 @@
+premium.admin:
+  title: 'Suis-je premium'
+  description: 'Exemple de lien menu'
+  parent: system.admin_config_development
+  route_name: premium.whoIAm
+  weight: 100
+premium.gold:
+  title: 'Gold internal'
+  description: 'Lien exemple interne'
+  parent: system.admin_config_development
+  url: internal:/suis-je-gold

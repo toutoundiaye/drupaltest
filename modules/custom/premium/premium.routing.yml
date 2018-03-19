@@ -1,0 +1,21 @@
+premium.whoIAm:
+  path: '/suis-je-gold'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::whoIAm'
+    _title: 'Suis-je premium ?'
+  requirements:
+    _permission: 'access content'
+premium.whoIsHe:
+  path: '/est-il-gold/{uid}'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::whoIsHe'
+    _title: 'Est-il premium ?'
+  requirements:
+    _permission: 'access content'
+premium.gold:
+  path: '/page-gold'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::gold'
+    _title: 'Premium'
+  requirements:
+    _permission: 'access premium content'

@@ -1,0 +1,6 @@
+'give a premium status':
+  title: Give a premium status
+  description: Allows users to give a premium status to a content.
+'access premium content':
+  title: Access premium content
+  description: Allows users to get access to a content with premium status.

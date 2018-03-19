@@ -786,7 +786,7 @@ $settings['entity_update_batch_size'] = 50;
 $databases['default']['default'] = array (
   'database' => 'drupaltest',
   'username' => 'root',
-  'password' => 'presi2016',
+  'password' => 'dawan',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
@@ -795,3 +795,4 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_nT_UM8lu9Immi10dIZgz8pPPRHh4mRiu62Lfn0HluBkeJnu-3uk9eZiOlSI6XW6L_1fAacy86Q/sync';
+$config['system.logging']['error_level'] = 'all';

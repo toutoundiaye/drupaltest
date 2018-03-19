@@ -1,0 +1,6 @@
+name: Premium
+description: Show page according user permission
+package: Custom
+
+type: module
+core: 8.x

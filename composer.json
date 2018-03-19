@@ -20,7 +20,11 @@
         "drupal/diff": "^1.0@RC",
         "drupal/console": "^1",
         "drush/drush": "~9.0",
-        "drupal/backup_migrate": "^4.0@RC"
+        "drupal/backup_migrate": "^4.0@RC",
+        "drupal/features": "^3.7",
+        "drupal/masquerade": "^2.0@beta",
+        "drupal/examples": "1.x-dev",
+        "drupal/admin_toolbar": "^1.23"
     },
     "require-dev": {},
     "extra": {

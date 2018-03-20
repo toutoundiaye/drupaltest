@@ -25,8 +25,13 @@ monForm.form:
     _title: 'Formulaire de renseignements'
     _form: '\Drupal\premium\Form\MonForm'
   requirements:
-      _permission: 'access content'
-informations:
-  path: '/premium/monform/informations'
+    _permission: 'access content'
+premium.admin_settings:
+  path: '/admin/premiumconfig/'
   defaults:
-    _title: 'Données Renseignées'
+    _title: 'Premium Settings'
+    _form: '\Drupal\premium\Form\PremiumSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE  

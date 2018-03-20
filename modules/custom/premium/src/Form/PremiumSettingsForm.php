@@ -31,19 +31,16 @@ class PremiumSettingsForm extends ConfigFormBase
      * {@inheritdoc}
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
+        $config = $this->config('premium.settings');
         $form['message'] = array(
             '#type' => 'textarea',
             '#attributes' => array(
                 'placeholder' => t('Write your message')),
-            '#title' => t('Message'),
+            '#title' => $this->t('Message'),
+            '#default_value' => $config->get('message'),
         );
 
-        $form['submit'] = array(
-            '#type' => 'submit',
-            '#value' => t('Submit'),
-        );
-
-        return $form;
+       return parent::buildForm($form, $form_state);
     }
 
     /**
@@ -51,8 +48,8 @@ class PremiumSettingsForm extends ConfigFormBase
      */
     public function validateForm(array &$form, FormStateInterface $form_state)
     {
-    // Logique de validation.
-        $form_state->setErrorByName('form_field', 'message');
+        // Logique de validation.
+        //$form_state->setErrorByName('form_field', 'message');
     }
 
     /**
@@ -60,6 +57,20 @@ class PremiumSettingsForm extends ConfigFormBase
      */
     public function submitForm(array &$form, FormStateInterface $form_state)
     {
-    // Traitement des données soumises.
+       // Traitement des données soumises.
+       $values = $form_state->getValues();
+       $this->config('premium.settings')
+        ->set('message', $values['message'])
+        ->save();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function defaultConfiguration() {
+        $default_config = \Drupal::config('premium.settings');
+        return [
+            'message' => $default_config->get('premium.message'),
+        ];
     }
 }

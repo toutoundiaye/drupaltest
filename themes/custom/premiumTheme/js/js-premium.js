@@ -1,0 +1,1 @@
+console.log('coucou vous utilisez le theme premium');

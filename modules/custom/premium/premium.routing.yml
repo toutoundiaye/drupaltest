@@ -19,3 +19,14 @@ premium.gold:
     _title: 'Premium'
   requirements:
     _permission: 'access premium content'
+monForm.form:
+  path: '/premium/monform'
+  defaults:
+    _title: 'Formulaire de renseignements'
+    _form: '\Drupal\premium\Form\MonForm'
+  requirements:
+      _permission: 'access content'
+informations:
+  path: '/premium/monform/informations'
+  defaults:
+    _title: 'Données Renseignées'

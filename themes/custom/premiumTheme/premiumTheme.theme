@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function premiumTheme_preprocess_page(&$variables)
+{
+    $variables['copyright'] = t("Copyright @date @holder",
+        array(
+            '@date' => date('Y'),
+            '@holder'=> theme_get_setting('copyright_holder'),
+        ));
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function premiumTheme_theme_suggestions_node_alter(array &$suggestions, $variables, $hook)
+{
+    if (\Drupal::currentUser()->isAuthenticated()) {
+        $bundle = $variables['elements']['#node']->bundle();
+        $mode = $variables['elements']['#view_mode'];
+        $view_mode = strtr($mode, '.', '_');
+
+        $suggestions[] = 'node__' . $bundle . '__logged_in';
+        $suggestions[] = 'node__' . $view_mode . '__logged_in';
+    }
+
+}
+
+function premiumTheme_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL)
+{
+    $form['copyright_holder'] = array(
+        '#type' => 'textfield',
+        '#title' => t('copyright holder'),
+        '#default_value' => theme_get_setting('copyright_holder'),
+        '#description' => t('Show the owner of the copyright.'),
+    );
+}
+
+function premiumTheme_form_alter(&$form, $form_state, $form_id = 'premium_form')
+{
+    $form['email']['#description'] = t('Indicate a email value.');
+
+    $form['phone_number']['#title'] = t('Phone');
+}

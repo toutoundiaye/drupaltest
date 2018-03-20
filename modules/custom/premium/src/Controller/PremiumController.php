@@ -4,7 +4,8 @@ namespace Drupal\premium\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
-class PremiumController extends ControllerBase {
+class PremiumController extends ControllerBase
+{
 
     /**
      * Display the markup.

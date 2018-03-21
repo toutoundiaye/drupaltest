@@ -78,7 +78,7 @@ class PremiumBlock extends BlockBase implements BlockPluginInterface
      * {@inheritdoc}
      */
     public function defaultConfiguration() {
-        $default_config = \Drupal::config('premium_world.settings');
+        $default_config = \Drupal::config('premium.settings');
         return [
             'premium_block_name' => $default_config->get('premium.name'),
         ];

@@ -3,10 +3,32 @@
 namespace Drupal\premium\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\premium\PremiumService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class PremiumController extends ControllerBase
 {
+    /**
+     *
+     */
+     protected $premiumService;
 
+     public function __construct(PremiumService $premiumService )
+     {
+         $this->premiumService = $premiumService;
+     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(ContainerInterface $container)
+    {
+        // Instantiates this form class.
+        return new static(
+        // Load the service required to construct this class.
+            $container->get('premiumService')
+        );
+    }
     /**
      * Display the markup.
      *
@@ -37,8 +59,16 @@ class PremiumController extends ControllerBase
      */
     public function whoIsHe($uid)
     {
+        $premiumService = \Drupal::service('premiumService');
         $message = 'Vous ne pouvez pas voir les contenus premium';
-        if (\Drupal\user\Entity\User::load($uid)->hasPermission('access premium content')) {
+
+ //       Sans usage du service premiumService
+//        if (\Drupal\user\Entity\User::load($uid)->hasPermission('access premium content')) {
+//            $message = 'Vous pouvez voir les contenus premium';
+//        }
+
+        // En faisant appel au service premiumService
+        if ($premiumService->isUserPremium($uid)){
             $message = 'Vous pouvez voir les contenus premium';
         }
         return [
@@ -70,4 +100,18 @@ class PremiumController extends ControllerBase
         ];
 
     }
+
+    public function show()
+    {
+        $db = \Drupal::database();
+        $query = $db->query("SELECT uid FROM users");
+        $results = $query->fetchAll();
+        foreach ($results as $result) {
+            return [
+                '#type' => 'markup',
+                '#markup' => $this->t($result),
+            ];
+        }
+    }
 }
+git 

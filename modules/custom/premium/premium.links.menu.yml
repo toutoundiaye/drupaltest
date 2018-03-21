@@ -9,9 +9,9 @@ premium.gold:
   description: 'Lien exemple interne'
   parent: system.admin_config_development
   url: internal:/suis-je-gold
-premium.admin_settings:
+premium.adminSettings:
   title: 'Premium module settings'
-  description: 'premium admin settings page link'
-  parent: system.admin
-  route_name: premium.admin_settings
+  description: 'Premium admin settings page link'
+  parent: system.admin_config_development
+  route_name: premium.adminSettings
   weight: 150

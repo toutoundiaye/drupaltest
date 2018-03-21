@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\premium\Form;
+
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -30,8 +31,12 @@ class PremiumSettingsForm extends ConfigFormBase
     /**
      * {@inheritdoc}
      */
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state)
+    {
+        $form = parent::buildForm($form, $form_state);
+
         $config = $this->config('premium.settings');
+
         $form['message'] = array(
             '#type' => 'textarea',
             '#attributes' => array(
@@ -40,7 +45,7 @@ class PremiumSettingsForm extends ConfigFormBase
             '#default_value' => $config->get('message'),
         );
 
-       return parent::buildForm($form, $form_state);
+       return $form;
     }
 
     /**
@@ -62,12 +67,15 @@ class PremiumSettingsForm extends ConfigFormBase
        $this->config('premium.settings')
         ->set('message', $values['message'])
         ->save();
+
+       return parent::submitForm($form, $form_state);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function defaultConfiguration() {
+    public function defaultConfiguration()
+    {
         $default_config = \Drupal::config('premium.settings');
         return [
             'message' => $default_config->get('premium.message'),

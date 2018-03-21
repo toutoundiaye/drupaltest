@@ -26,12 +26,26 @@ monForm.form:
     _form: '\Drupal\premium\Form\MonForm'
   requirements:
     _permission: 'access content'
-premium.admin_settings:
-  path: '/admin/premiumconfig/'
+premium.adminSettings:
+  path: '/admin/premiumconfig'
   defaults:
     _title: 'Premium Settings'
     _form: '\Drupal\premium\Form\PremiumSettingsForm'
   requirements:
     _permission: 'administer site configuration'
   options:
-    _admin_route: TRUE  
+    _admin_route: TRUE
+premium.roleUserForm:
+  path: '/role-user-form'
+  defaults:
+      _title: 'Formulaire d utilisateurs'
+      _form: '\Drupal\premium\Form\RoleUserForm'
+  requirements:
+    _permission: 'access content'
+premium.show:
+  path: '/utilisateurs-premium'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::show'
+    _title: 'Liste des utilisateurs premium ?'
+  requirements:
+    _permission: 'access content'

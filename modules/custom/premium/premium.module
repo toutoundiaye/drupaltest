@@ -39,11 +39,11 @@ function premium_theme($existing, $type, $theme, $path)
 /**
  * Implements hook_user_login().
  */
-function premium_user_login($form_state, $form_id = 'premium_admin_setting')
+function premium_user_login($account)
 {
-    drupal_set_message(t('Hello @name, @message', array(
-        '@name' => \Drupal::currentUser()->getUserName(),
-        '@message' => $form_state->getValue('message'),
+    $config = \Drupal::config('premium.settings');
+    drupal_set_message(t('@message', array(
+        '@message' => $config->get('message'),
         )
     ));   
 

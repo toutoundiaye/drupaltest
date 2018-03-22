@@ -42,10 +42,46 @@ premium.roleUserForm:
       _form: '\Drupal\premium\Form\RoleUserForm'
   requirements:
     _permission: 'access content'
-premium.show:
+premium.listPremiumUsers:
   path: '/utilisateurs-premium'
   defaults:
-    _controller: '\Drupal\premium\Controller\PremiumController::show'
-    _title: 'Liste des utilisateurs premium ?'
+    _controller: '\Drupal\premium\Controller\PremiumController::listPremiumUsers'
+    _title: 'Liste des utilisateurs premium'
+  requirements:
+    _permission: 'access content'
+premium.listPremiumArticles:
+  path: '/articles-premium'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::listPremiumArticles'
+    _title: 'Liste des articles premium'
+  requirements:
+    _permission: 'access content'
+premium.listDossierWithCommunArticles:
+  path: '/dossier-with-commun-articles'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::listDossierWithCommunArticles'
+    _title: 'Liste des dossiers avec des articles en commun'
+  requirements:
+    _permission: 'access content'
+premium.listDossierWithNotPremiumArticles:
+  path: '/dossier-with-not-premium-articles'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::listDossierWithNotPremiumArticles'
+    _title: 'Liste des dossiers avec des articles qui ne sont pas premium'
+  requirements:
+    _permission: 'access content'
+premium.listPremiumDossiersOrDossiersWithPremiumArticles():
+  path: '/dossier-premium-or-dossier-with-premium-articles'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::listPremiumDossiersOrDossiersWithPremiumArticles'
+    _title: 'Liste des dossiers premium ou avec des articles premium'
+  requirements:
+    _permission: 'access content'
+
+messsageForm.form:
+  path: '/messageform'
+  defaults:
+    _title: 'Formulaire d envoi de message'
+    _form: '\Drupal\premium\Form\MessageForm'
   requirements:
     _permission: 'access content'

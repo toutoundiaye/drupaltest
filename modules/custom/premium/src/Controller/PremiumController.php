@@ -5,6 +5,9 @@ namespace Drupal\premium\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\premium\PremiumService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+
 
 class PremiumController extends ControllerBase
 {
@@ -101,16 +104,140 @@ class PremiumController extends ControllerBase
 
     }
 
-    public function show()
+    public function listPremiumUsers()
     {
-        $db = \Drupal::database();
-        $query = $db->query("SELECT uid FROM users");
-        $results = $query->fetchAll();
-        foreach ($results as $result) {
-            return [
-                '#type' => 'markup',
-                '#markup' => $this->t($result),
-            ];
+        $ids = \Drupal::entityQuery('user')
+            ->condition('roles','premium')
+            ->execute();
+
+        $users = User::loadMultiple($ids);
+
+        $rows = [];
+
+        /* @var $user User
+        */
+        foreach ($users as $user) {
+            $rows[] = array(
+                $user->getUsername(),
+                $user->getEmail(),
+                implode(', ', $user->getRoles()),
+                $user->getDisplayName(),
+                $user->id()
+            );
         }
+        return [
+            '#type' => 'table',
+            '#caption' => $this->t('list of premium users'),
+            '#header' => [
+                $this-> t('Username'),
+                $this-> t('Email'),
+                $this-> t('Roles'),
+                $this-> t('DisplayName'),
+                $this-> t('Uid'),
+
+            ],
+            '#rows' => $rows
+        ];
+    }
+
+    public function listPremiumArticles()
+    {
+      $nids = \Drupal::EntityQuery('node')
+          ->condition('type', 'article') //type de contenu
+          ->condition('status', 1)    //publié
+          ->condition('field_tags.entity.name', 'premium')
+          //afficher le term premium dans le tag Tag2
+          //->condition('field_tags.entity.name', ['premium', 'Tag2'] 'IN')
+
+          // afficher les tags sauf premium
+          //->condition('field_tags.entity.name', 'premium', '<>')
+          ->execute();
+      $nodes = Node::loadMultiple($nids);
+      //ksm($nodes);
+
+      $items = [];
+
+        /* @var $node Node
+         */
+        foreach ($nodes as $node) {
+            $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'teaser');
+        }
+
+        return [
+            '#theme' => 'item_list',
+            '#items' => $items
+        ];
+    }
+
+    public function listDossierWithCommunArticles()
+    {
+        $dids = \Drupal::EntityQuery('node')
+            ->condition('type', 'dossier') //type de contenu
+            ->condition('status', 1)    //publié
+            ->condition('field_articles.entity.title', 'Article premium 2')
+            ->execute();
+        $nodes = Node::loadMultiple($dids);
+        $items = [];
+
+        /* @var $node Node
+         */
+        foreach ($nodes as $node) {
+            $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
+        }
+
+        return [
+            '#theme' => 'item_list',
+            '#items' => $items
+        ];
+    }
+
+    public function listDossierWithNotPremiumArticles()
+    {
+        $dids = \Drupal::EntityQuery('node')
+            ->condition('type', 'dossier') //type de contenu
+            ->condition('status', 1)    //publié
+            ->condition('field_articles.entity.field_tags.entity.name', 'premium', '<>')
+            ->execute();
+        $nodes = Node::loadMultiple($dids);
+        $items = [];
+
+        /* @var $node Node
+         */
+        foreach ($nodes as $node) {
+            $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
+        }
+
+        return [
+            '#theme' => 'item_list',
+            '#items' => $items
+        ];
+    }
+
+    public function listPremiumDossiersOrDossiersWithPremiumArticles()
+    {
+        $query = \Drupal::EntityQuery('node');
+
+        $condition_or = $query->orConditionGroup();
+        $condition_or->condition('field_tags.entity.name', 'premium');
+        $condition_or->condition('field_articles.entity.field_tags.entity.name', 'premium');
+        $query->condition('type', 'dossier'); //type de contenu
+        $query->condition('status', 1);    //publié
+        $query->condition($condition_or);
+        $nids = $query->execute();
+
+        $nodes = Node::loadMultiple($nids);
+
+        $items = [];
+
+        /* @var $node Node
+         */
+        foreach ($nodes as $node) {
+            $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
+        }
+
+        return [
+            '#theme' => 'item_list',
+            '#items' => $items
+        ];
     }
 }

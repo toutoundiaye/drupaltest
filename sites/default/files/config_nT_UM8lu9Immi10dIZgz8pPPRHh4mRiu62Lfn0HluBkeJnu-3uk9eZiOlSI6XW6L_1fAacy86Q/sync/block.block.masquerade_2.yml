@@ -1,0 +1,20 @@
+uuid: 1adb5051-fc1d-4162-b362-a43d950f59bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - premiumTheme
+id: masquerade_2
+theme: premiumTheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility: {  }

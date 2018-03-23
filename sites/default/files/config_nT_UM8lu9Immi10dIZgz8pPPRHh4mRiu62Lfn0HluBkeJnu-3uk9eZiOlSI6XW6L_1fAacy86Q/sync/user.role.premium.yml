@@ -1,0 +1,11 @@
+uuid: 8974a4b1-283c-4f24-8f7e-b5e542b7be6e
+langcode: en
+status: true
+dependencies: {  }
+id: premium
+label: Premium
+weight: 3
+is_admin: null
+permissions:
+  - 'access premium content'
+  - 'give a premium status'

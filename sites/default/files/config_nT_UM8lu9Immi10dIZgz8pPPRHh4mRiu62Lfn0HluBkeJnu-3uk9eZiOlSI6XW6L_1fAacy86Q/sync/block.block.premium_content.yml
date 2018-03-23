@@ -1,0 +1,22 @@
+uuid: ca62645c-b8fc-4006-beb8-cc58a554103d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - premium
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: premium_content
+theme: premium
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

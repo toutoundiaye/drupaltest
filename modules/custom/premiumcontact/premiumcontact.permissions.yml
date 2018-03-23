@@ -1,0 +1,30 @@
+add contact premium entities:
+  title: 'Create new Contact premium entities'
+
+administer contact premium entities:
+  title: 'Administer Contact premium entities'
+  description: 'Allow to access the administration form to configure Contact premium entities.'
+  restrict access: true
+
+delete contact premium entities:
+  title: 'Delete Contact premium entities'
+
+edit contact premium entities:
+  title: 'Edit Contact premium entities'
+
+view published contact premium entities:
+  title: 'View published Contact premium entities'
+
+view unpublished contact premium entities:
+  title: 'View unpublished Contact premium entities'
+
+view all contact premium revisions:
+  title: 'View all Contact premium revisions'
+
+revert all contact premium revisions:
+  title: 'Revert all Contact premium revisions'
+  description: 'Role requires permission <em>view Contact premium revisions</em> and <em>edit rights</em> for contact premium entities in question or <em>administer contact premium entities</em>.'
+
+delete all contact premium revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Contact premium revisions</em> and <em>delete rights</em> for contact premium entities in question or <em>administer contact premium entities</em>.'

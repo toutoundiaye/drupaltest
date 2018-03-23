@@ -1,0 +1,38 @@
+uuid: 2cca9a76-66ba-4d60-8b0f-d44a15edca64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.folder.folder.field_folder_1
+  module:
+    - premium_partner
+    - user
+id: folder.folder.default
+targetEntityType: folder
+bundle: folder
+mode: default
+content:
+  field_folder_1:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,20 @@
+uuid: 22555a2c-36e4-484d-84ee-d4b72ff764e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - premium_partner
+id: folder.field_folder_1
+field_name: field_folder_1
+entity_type: folder
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

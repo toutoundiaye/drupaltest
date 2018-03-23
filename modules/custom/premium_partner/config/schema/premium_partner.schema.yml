@@ -1,0 +1,13 @@
+premium_partner.partner.*:
+  type: config_entity
+  label: 'Partner config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'Label'
+    url:
+      type: string
+      label: 'Url'

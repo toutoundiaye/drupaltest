@@ -1,0 +1,27 @@
+# Folder routing definition
+folder.settings_tab:
+  route_name: folder.settings
+  title: 'Settings'
+  base_route: folder.settings
+
+entity.folder.canonical:
+  route_name: entity.folder.canonical
+  base_route: entity.folder.canonical
+  title: 'View'
+
+entity.folder.edit_form:
+  route_name: entity.folder.edit_form
+  base_route: entity.folder.canonical
+  title: 'Edit'
+
+entity.folder.version_history:
+  route_name: entity.folder.version_history
+  base_route: entity.folder.canonical
+  title: 'Revisions'
+
+entity.folder.delete_form:
+  route_name:  entity.folder.delete_form
+  base_route:  entity.folder.canonical
+  title: Delete
+  weight: 10
+

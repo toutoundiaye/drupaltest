@@ -1,0 +1,30 @@
+add folder entities:
+  title: 'Create new Folder entities'
+
+administer folder entities:
+  title: 'Administer Folder entities'
+  description: 'Allow to access the administration form to configure Folder entities.'
+  restrict access: true
+
+delete folder entities:
+  title: 'Delete Folder entities'
+
+edit folder entities:
+  title: 'Edit Folder entities'
+
+view published folder entities:
+  title: 'View published Folder entities'
+
+view unpublished folder entities:
+  title: 'View unpublished Folder entities'
+
+view all folder revisions:
+  title: 'View all Folder revisions'
+
+revert all folder revisions:
+  title: 'Revert all Folder revisions'
+  description: 'Role requires permission <em>view Folder revisions</em> and <em>edit rights</em> for folder entities in question or <em>administer folder entities</em>.'
+
+delete all folder revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Folder revisions</em> and <em>delete rights</em> for folder entities in question or <em>administer folder entities</em>.'

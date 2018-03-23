@@ -1,0 +1,7 @@
+partnerForm.form:
+  path: '/premium/partner'
+  defaults:
+    _title: 'Formulaire de creation de site partner'
+    _form: '\Drupal\premium_partner\Form\PartnerForm'
+  requirements:
+    _permission: 'access content'

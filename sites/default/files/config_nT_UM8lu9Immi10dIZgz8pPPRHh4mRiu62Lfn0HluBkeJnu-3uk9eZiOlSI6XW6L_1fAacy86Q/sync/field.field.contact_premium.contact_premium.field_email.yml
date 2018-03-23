@@ -1,0 +1,21 @@
+uuid: 573d6ff5-beca-4a00-9e4d-cae10545b85c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contact_premium.field_email
+  module:
+    - premiumcontact
+    - text
+id: contact_premium.contact_premium.field_email
+field_name: field_email
+entity_type: contact_premium
+bundle: contact_premium
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

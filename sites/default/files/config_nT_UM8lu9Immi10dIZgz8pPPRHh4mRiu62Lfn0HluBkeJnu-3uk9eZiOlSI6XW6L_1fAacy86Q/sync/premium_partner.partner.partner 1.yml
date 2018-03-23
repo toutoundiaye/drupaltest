@@ -1,0 +1,7 @@
+uuid: null
+langcode: en
+status: true
+dependencies: {  }
+id: 'partner 1'
+label: 'partner 1 '
+url: 'http://exemple.com'

@@ -1,0 +1,9 @@
+uuid: 885a7a53-a624-47ae-ab61-b12c15d02b7b
+langcode: und
+status: true
+dependencies: {  }
+name: howrucrip
+vid: howrucrip
+description: 'Description of howrucrip'
+hierarchy: 0
+weight: 9

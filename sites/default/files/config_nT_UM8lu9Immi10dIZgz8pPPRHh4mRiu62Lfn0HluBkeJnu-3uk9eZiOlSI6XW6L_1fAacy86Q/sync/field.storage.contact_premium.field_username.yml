@@ -1,0 +1,20 @@
+uuid: f5af00cb-636f-46af-a650-dc9f812c771a
+langcode: en
+status: true
+dependencies:
+  module:
+    - premiumcontact
+    - text
+id: contact_premium.field_username
+field_name: field_username
+entity_type: contact_premium
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

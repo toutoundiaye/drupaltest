@@ -1,0 +1,22 @@
+{#
+/**
+ * @file contact_premium.html.twig
+ * Default theme implementation to present Contact premium data.
+ *
+ * This template is used when viewing Contact premium pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_contact_premium()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('contact_premium') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

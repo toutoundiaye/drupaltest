@@ -1,0 +1,5 @@
+entity.contact_premium.add_form:
+  route_name: entity.contact_premium.add_form
+  title: 'Add Contact premium'
+  appears_on:
+    - entity.contact_premium.collection

@@ -101,17 +101,5 @@ class PremiumController extends ControllerBase
 
     }
 
-    public function show()
-    {
-        $db = \Drupal::database();
-        $query = $db->query("SELECT uid FROM users");
-        $results = $query->fetchAll();
-        foreach ($results as $result) {
-            return [
-                '#type' => 'markup',
-                '#markup' => $this->t($result),
-            ];
-        }
-    }
+    
 }
-git 

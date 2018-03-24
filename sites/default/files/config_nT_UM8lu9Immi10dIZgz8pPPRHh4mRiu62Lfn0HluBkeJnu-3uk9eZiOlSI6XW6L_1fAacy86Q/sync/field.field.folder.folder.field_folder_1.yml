@@ -1,0 +1,29 @@
+uuid: c379ca75-18c8-449d-a70d-cb9d95e53b9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.folder.field_folder_1
+    - node.type.dossier
+  module:
+    - premium_partner
+id: folder.folder.field_folder_1
+field_name: field_folder_1
+entity_type: folder
+bundle: folder
+label: 'Folder 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dossier: dossier
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

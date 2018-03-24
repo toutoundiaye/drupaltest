@@ -1,0 +1,54 @@
+uuid: f3a5c7dd-a3f0-4386-ae67-a589dbbc3e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.contact_premium.contact_premium.field_email
+    - field.field.contact_premium.contact_premium.field_username
+    - field.field.contact_premium.contact_premium.field_website
+  module:
+    - premiumcontact
+    - text
+    - user
+id: contact_premium.contact_premium.default
+targetEntityType: contact_premium
+bundle: contact_premium
+mode: default
+content:
+  field_email:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_username:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_website:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

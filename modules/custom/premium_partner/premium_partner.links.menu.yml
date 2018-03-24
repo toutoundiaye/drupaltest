@@ -1,0 +1,14 @@
+
+# Folder menu items definition
+entity.folder.collection:
+  title: 'Folder list'
+  route_name: entity.folder.collection
+  description: 'List Folder entities'
+  parent: system.admin_structure
+  weight: 100
+
+folder.admin.structure.settings:
+  title: 'Folder settings'
+  description: 'Configure Folder entities'
+  route_name: folder.settings
+  parent: system.admin_structure

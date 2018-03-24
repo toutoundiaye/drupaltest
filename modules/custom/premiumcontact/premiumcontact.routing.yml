@@ -1,0 +1,7 @@
+contactPremiumListForm.form:
+  path: '/contacts-premium-list'
+  defaults:
+    _title: 'Formulaire liste contact'
+    _form: '\Drupal\premiumcontact\Form\contactPremiumListForm'
+  requirements:
+    _permission: 'access content'

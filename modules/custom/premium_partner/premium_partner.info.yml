@@ -1,0 +1,6 @@
+name: Premium partner
+description: Create partner sites
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,14 @@
+
+# Contact premium menu items definition
+entity.contact_premium.collection:
+  title: 'Contact premium list'
+  route_name: entity.contact_premium.collection
+  description: 'List Contact premium entities'
+  parent: system.admin_structure
+  weight: 100
+
+contact_premium.admin.structure.settings:
+  title: 'Contact premium settings'
+  description: 'Configure Contact premium entities'
+  route_name: contact_premium.settings
+  parent: system.admin_structure

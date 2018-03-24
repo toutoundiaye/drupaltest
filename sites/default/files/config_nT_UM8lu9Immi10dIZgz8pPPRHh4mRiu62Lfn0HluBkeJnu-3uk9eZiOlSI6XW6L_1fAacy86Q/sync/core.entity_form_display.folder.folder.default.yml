@@ -1,0 +1,40 @@
+uuid: cfb49a36-343b-4482-a624-5a7607633ab5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.folder.folder.field_folder_1
+  module:
+    - premium_partner
+id: folder.folder.default
+targetEntityType: folder
+bundle: folder
+mode: default
+content:
+  field_folder_1:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

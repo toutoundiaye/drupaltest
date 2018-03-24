@@ -1,0 +1,21 @@
+uuid: b6a12193-5d50-4ce9-813b-5b0b9a2410bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contact_premium.field_website
+  module:
+    - premiumcontact
+    - text
+id: contact_premium.contact_premium.field_website
+field_name: field_website
+entity_type: contact_premium
+bundle: contact_premium
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

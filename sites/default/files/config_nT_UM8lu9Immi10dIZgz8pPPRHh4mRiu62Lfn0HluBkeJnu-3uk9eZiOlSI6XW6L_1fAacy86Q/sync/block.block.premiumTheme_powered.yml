@@ -1,0 +1,22 @@
+uuid: 6fdbf3d8-d045-48d6-af07-b5a2b6b393a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - premiumTheme
+_core:
+  default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
+id: premiumTheme_powered
+theme: premiumTheme
+region: footer
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

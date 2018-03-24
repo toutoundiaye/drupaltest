@@ -1,0 +1,21 @@
+uuid: d0c2171a-ab36-443c-b2b4-60a2d36a65dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.contact_premium.field_username
+  module:
+    - premiumcontact
+    - text
+id: contact_premium.contact_premium.field_username
+field_name: field_username
+entity_type: contact_premium
+bundle: contact_premium
+label: Username
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

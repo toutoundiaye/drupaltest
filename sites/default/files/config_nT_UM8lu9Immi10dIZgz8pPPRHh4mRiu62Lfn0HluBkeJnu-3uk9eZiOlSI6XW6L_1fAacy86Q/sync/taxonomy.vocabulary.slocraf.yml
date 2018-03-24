@@ -1,0 +1,9 @@
+uuid: 02031af4-dddb-41a4-89f1-0b626739a2d5
+langcode: und
+status: true
+dependencies: {  }
+name: slocraf
+vid: slocraf
+description: 'Description of slocraf'
+hierarchy: 1
+weight: 10

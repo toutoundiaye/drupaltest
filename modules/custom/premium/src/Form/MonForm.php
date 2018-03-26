@@ -25,7 +25,7 @@ class MonForm extends FormBase
         $form['name'] = array(
             '#type' => 'textfield',
             '#attributes' => array(
-               'placeholder' => t('Indicate your name')),
+                'placeholder' => t('Indicate your name')),
             '#title' => t('Name'),
             '#required' => TRUE,
         );
@@ -33,7 +33,7 @@ class MonForm extends FormBase
         $form['phone_number'] = array(
             '#type' => 'tel',
             '#attributes' => array(
-               'placeholder' => t('Indicate your phone number ')
+                'placeholder' => t('Indicate your phone number ')
             ),
             '#title' => t('Phone number'),
         );
@@ -41,7 +41,7 @@ class MonForm extends FormBase
         $form['email'] = array(
             '#type' => 'email',
             '#attributes' => array(
-               'placeholder' => t('Indicate your email')
+                'placeholder' => t('Indicate your email')
             ),
             '#title' => t('Email'),
             '#description' => t('An address for information'),
@@ -88,12 +88,12 @@ class MonForm extends FormBase
 
         drupal_set_message($this->t('Hello @name, your phone number is @number, 
             and your email adress is @email',
-                array(
-                    '@number' => $form_state->getValue('phone_number'),
-                    '@name' => $form_state->getValue('name'),
-                    '@email' => $form_state->getValue('email'),
-                )
+            array(
+                '@number' => $form_state->getValue('phone_number'),
+                '@name' => $form_state->getValue('name'),
+                '@email' => $form_state->getValue('email'),
             )
+        )
         );
     }
 }

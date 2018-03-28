@@ -1,0 +1,10 @@
+uuid: d5c60479-2340-475c-b435-e2d0de318676
+langcode: en
+status: true
+dependencies:
+  module:
+    - premiumcontact
+id: contact_premium.token
+label: Token
+targetEntityType: contact_premium
+cache: true

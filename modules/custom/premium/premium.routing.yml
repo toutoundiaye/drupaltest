@@ -5,6 +5,7 @@ premium.whoIAm:
     _title: 'Suis-je premium ?'
   requirements:
     _permission: 'access content'
+
 premium.whoIsHe:
   path: '/est-il-gold/{uid}'
   defaults:
@@ -12,6 +13,7 @@ premium.whoIsHe:
     _title: 'Est-il premium ?'
   requirements:
     _permission: 'access content'
+
 premium.gold:
   path: '/page-gold'
   defaults:
@@ -19,6 +21,7 @@ premium.gold:
     _title: 'Premium'
   requirements:
     _permission: 'access premium content'
+
 monForm.form:
   path: '/premium/monform'
   defaults:
@@ -26,6 +29,7 @@ monForm.form:
     _form: '\Drupal\premium\Form\MonForm'
   requirements:
     _permission: 'access content'
+
 premium.adminSettings:
   path: '/admin/premiumconfig'
   defaults:
@@ -35,6 +39,7 @@ premium.adminSettings:
     _permission: 'administer site configuration'
   options:
     _admin_route: TRUE
+
 premium.roleUserForm:
   path: '/role-user-form'
   defaults:
@@ -42,6 +47,7 @@ premium.roleUserForm:
       _form: '\Drupal\premium\Form\RoleUserForm'
   requirements:
     _permission: 'access content'
+
 premium.listPremiumUsers:
   path: '/utilisateurs-premium'
   defaults:
@@ -49,6 +55,7 @@ premium.listPremiumUsers:
     _title: 'Liste des utilisateurs premium'
   requirements:
     _permission: 'access content'
+
 premium.listPremiumArticles:
   path: '/articles-premium'
   defaults:
@@ -56,6 +63,7 @@ premium.listPremiumArticles:
     _title: 'Liste des articles premium'
   requirements:
     _permission: 'access content'
+
 premium.listDossierWithCommunArticles:
   path: '/dossier-with-commun-articles'
   defaults:
@@ -63,6 +71,7 @@ premium.listDossierWithCommunArticles:
     _title: 'Liste des dossiers avec des articles en commun'
   requirements:
     _permission: 'access content'
+
 premium.listDossierWithNotPremiumArticles:
   path: '/dossier-with-not-premium-articles'
   defaults:
@@ -70,6 +79,7 @@ premium.listDossierWithNotPremiumArticles:
     _title: 'Liste des dossiers avec des articles qui ne sont pas premium'
   requirements:
     _permission: 'access content'
+
 premium.listPremiumDossiersOrDossiersWithPremiumArticles():
   path: '/dossier-premium-or-dossier-with-premium-articles'
   defaults:
@@ -83,5 +93,13 @@ messsageForm.form:
   defaults:
     _title: 'Formulaire d envoi de message'
     _form: '\Drupal\premium\Form\MessageForm'
+  requirements:
+    _permission: 'access content'
+
+cacheForm:
+  path: '/cacheform'
+  defaults:
+    _title: 'Les tags'
+    _form: '\Drupal\premium\Form\CacheForm'
   requirements:
     _permission: 'access content'

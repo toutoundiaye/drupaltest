@@ -1,0 +1,10 @@
+uuid: d5df358f-3e45-43c8-8005-12f8f85899b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - premium_partner
+id: folder.token
+label: Token
+targetEntityType: folder
+cache: true

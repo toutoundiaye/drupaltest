@@ -25,7 +25,8 @@
         "drupal/masquerade": "^2.0@beta",
         "drupal/examples": "1.x-dev",
         "drupal/admin_toolbar": "^1.23",
-        "drupal/pathauto": "^1.1"
+        "drupal/pathauto": "^1.1",
+        "drupal/memcache": "2.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"

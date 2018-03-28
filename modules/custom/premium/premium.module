@@ -48,3 +48,17 @@ function premium_user_login($account)
     ));   
 
 }
+
+function _custom_theme($existing, $type, $theme, $path)
+{
+    $variables = array(
+        'block--premium-cache' => array(
+            'variables' => array(
+                'message' => NULL,
+                'image' => NULL,
+            ),
+            'template' => 'block--premium-cache',
+        ),
+    );
+    return $variables;
+}

@@ -12,6 +12,7 @@ module:
   config_update: 0
   contact: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -39,11 +40,13 @@ module:
   premiumcontact: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   search: 0
   shortcut: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0
@@ -51,6 +54,7 @@ module:
   views_ui: 0
   webprofiler: 0
   menu_link_content: 1
+  pathauto: 1
   views: 10
   standard: 1000
 theme:
@@ -59,7 +63,6 @@ theme:
   bartik: 0
   seven: 0
   bootstrap: 0
-  premium: 0
   premiumTheme: 0
 profile: standard
 _core:

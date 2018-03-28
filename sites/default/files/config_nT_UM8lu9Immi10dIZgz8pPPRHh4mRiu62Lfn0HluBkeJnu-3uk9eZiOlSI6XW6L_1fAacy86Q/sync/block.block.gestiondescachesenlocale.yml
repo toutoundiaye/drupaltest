@@ -1,0 +1,22 @@
+uuid: 8eef7083-4cd2-448f-ba7f-61ea99f1acca
+langcode: en
+status: true
+dependencies:
+  module:
+    - premium
+  theme:
+    - premiumTheme
+id: gestiondescachesenlocale
+theme: premiumTheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: premium_cache
+settings:
+  id: premium_cache
+  label: 'Gestion des caches en locale'
+  provider: premium
+  label_display: visible
+  premium_cache_block_message: ''
+  premium_cache_block_image: null
+visibility: {  }

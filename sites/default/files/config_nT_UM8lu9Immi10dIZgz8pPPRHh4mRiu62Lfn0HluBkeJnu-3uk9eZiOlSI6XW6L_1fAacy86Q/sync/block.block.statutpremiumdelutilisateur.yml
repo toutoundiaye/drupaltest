@@ -1,0 +1,21 @@
+uuid: 3fd6f461-60da-47d4-bf5a-550311d1f80d
+langcode: en
+status: true
+dependencies:
+  module:
+    - premium
+  theme:
+    - premiumTheme
+id: statutpremiumdelutilisateur
+theme: premiumTheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: premium_status
+settings:
+  id: premium_status
+  label: 'Statut premium de l''utilisateur'
+  provider: premium
+  label_display: visible
+  premium_block_name: 'Dupont Duval'
+visibility: {  }

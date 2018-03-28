@@ -3,4 +3,7 @@ premium:
   message: 'Welcome on your Premium custum site'
 _core:
   default_config_hash: 5lyewdTMTx6utCvR9A-EE3VXVIYCjyioLSQSaKVYJmI
-message: 'Welcome my dear. How are you today? '
+message: 'Coucou. ça va les terriens?'
+premium_cache:
+  message: 'Hello les lolos! oh zut et encore'
+  image: {  }

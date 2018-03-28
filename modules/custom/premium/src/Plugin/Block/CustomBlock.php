@@ -37,21 +37,32 @@ class CustomBlock extends BlockBase implements BlockPluginInterface
            $image = $config->get('premium_cache.image');
         }
         else {
-            $file = File::load($config->get('premium_cache.image')[0]);
-          //  $uri = $file->getFileUri();
+            $image = $this->t('Aucune image...');
+            //$file = File::load($config->get('premium_cache.image')[0]);
+           // $uri = $file->getFileUri();
            // $urlImage = Url::fromUri($uri); 
         }
     
+
+       // $file = File::load($image[0]);
+      // $file = File::load($config->get('premium_cache.image')[0]);
         return array(
-            '#theme' => 'block--premium-cache',
-            '#markup' => $this->t('@message', array(
-                '@message' => $message,
-            )),
-            '#variables' => '@image', array(
-               '@image' => $urlImage,
-            ),
-            '#cache' => ['tags' => 'customBlock']
-        );     
+            'message' => [
+                '#theme' => 'custom',
+                '#markup' => $this->t('@message', array(
+                    '@message' => $message,
+                )),
+            ],
+            // 'image' => [
+            //     '#theme' => 'image',
+            //     '#uri' => $file->getFileUri(),
+            // ],
+            'cache' => [
+                '#cache' => [
+                    'tags' => ['customBlock'],
+                    'max-age' => 0]
+            ]
+         );    
     }
 
     /**
@@ -70,7 +81,7 @@ class CustomBlock extends BlockBase implements BlockPluginInterface
         ];
 
         $form['premium_cache_block_image'] = [
-            '#type' => 'file',
+            '#type' => 'managed_file',
             '#default_value' => isset($config['premium_cache_block_image']) ?
                 $config['premium_cache_block_image'] : '',
         ];

@@ -78,7 +78,7 @@ class CacheForm extends ConfigFormBase
             ->set('premium_cache.message', $values['message'])
             ->set('premium_cache.image', $values['image'])
             ->save();
-        ksm($values['image']);
+       // ksm($values['image']);
         return parent::submitForm($form, $form_state);
     }
   

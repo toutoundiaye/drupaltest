@@ -103,3 +103,11 @@ cacheForm:
     _form: '\Drupal\premium\Form\CacheForm'
   requirements:
     _permission: 'access content'
+
+promotionForm:
+  path: '/promotionform'
+  defaults:
+    _title: 'Les promotions'
+    _form: '\Drupal\premium\Form\PromotionForm'
+  requirements:
+    _permission: 'access content'

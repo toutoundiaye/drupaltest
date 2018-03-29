@@ -111,3 +111,12 @@ promotionForm:
     _form: '\Drupal\premium\Form\PromotionForm'
   requirements:
     _permission: 'access content'
+
+premium.getPromotion:
+  path: 'api/promotion'
+  defaults:
+    _controller: '\Drupal\premium\Controller\PremiumController::getPromotion'
+    _title: 'une promo ?'
+  requirements:
+    _permission: 'access content'
+    

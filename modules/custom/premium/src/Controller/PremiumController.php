@@ -15,10 +15,13 @@ class PremiumController extends ControllerBase
      *
      */
      protected $premiumService;
+     protected $customPromotionService;
 
-     public function __construct(PremiumService $premiumService )
+     public function __construct(PremiumService $premiumService, CustomPromotionService $customPromotionService )
      {
          $this->premiumService = $premiumService;
+         $this->customPromotionService = $customPromotionService;
+
      }
 
     /**
@@ -29,7 +32,8 @@ class PremiumController extends ControllerBase
         // Instantiates this form class.
         return new static(
         // Load the service required to construct this class.
-            $container->get('premiumService')
+            $container->get('premiumService'),
+            $container->get('customPromotionService')
         );
     }
     /**
@@ -218,5 +222,10 @@ class PremiumController extends ControllerBase
             '#theme' => 'item_list',
             '#items' => $items
         ];
+    }
+
+    public function getPromotion()
+    {
+        return new JsonResponse(array('message' => $name));
     }
 }

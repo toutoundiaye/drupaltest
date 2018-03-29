@@ -46,12 +46,12 @@ class PromotionForm extends ConfigFormBase
         );
 
         $form['debut_promotion'] = array(
-            '#type' => 'date',
+            '#type' => 'datetime',
             '#title' => 'Début de la promotion',
         );
 
         $form['fin_promotion'] = array(
-            '#type' => 'date',
+            '#type' => 'datetime',
             '#title' => 'Fin de la promotion',
         );
 

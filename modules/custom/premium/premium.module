@@ -62,3 +62,20 @@ function _custom_theme($existing, $type, $theme, $path)
     );
     return $variables;
 }
+
+function premium_preprocess_field(&$variables) 
+{
+    
+  //  $config =  \Drupal::config('premium.settings');
+    $field =  $variables['element'];
+    if ($field['#field_name'] === 'field_promotion') {
+       $config = \Drupal::config('premium.settings');
+       // ksm($variables['items']);
+        $variables['promotion'] = $variables['items'][0]['content']['#text'];
+       // ksm($variables['promotion']);
+        $variables['promotion'] = $config->get('premium_promotion.message');
+       // ksm($variables['promotion']);
+  }
+    return $variables;
+
+}

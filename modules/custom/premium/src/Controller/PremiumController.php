@@ -109,11 +109,8 @@ class PremiumController extends ControllerBase
         $ids = \Drupal::entityQuery('user')
             ->condition('roles','premium')
             ->execute();
-
         $users = User::loadMultiple($ids);
-
         $rows = [];
-
         /* @var $user User
         */
         foreach ($users as $user) {
@@ -134,12 +131,10 @@ class PremiumController extends ControllerBase
                 $this-> t('Roles'),
                 $this-> t('DisplayName'),
                 $this-> t('Uid'),
-
             ],
             '#rows' => $rows
         ];
     }
-
     public function listPremiumArticles()
     {
       $nids = \Drupal::EntityQuery('node')
@@ -148,27 +143,22 @@ class PremiumController extends ControllerBase
           ->condition('field_tags.entity.name', 'premium')
           //afficher le term premium dans le tag Tag2
           //->condition('field_tags.entity.name', ['premium', 'Tag2'] 'IN')
-
           // afficher les tags sauf premium
           //->condition('field_tags.entity.name', 'premium', '<>')
           ->execute();
       $nodes = Node::loadMultiple($nids);
       //ksm($nodes);
-
       $items = [];
-
         /* @var $node Node
          */
         foreach ($nodes as $node) {
             $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'teaser');
         }
-
         return [
             '#theme' => 'item_list',
             '#items' => $items
         ];
     }
-
     public function listDossierWithCommunArticles()
     {
         $dids = \Drupal::EntityQuery('node')
@@ -178,19 +168,16 @@ class PremiumController extends ControllerBase
             ->execute();
         $nodes = Node::loadMultiple($dids);
         $items = [];
-
         /* @var $node Node
          */
         foreach ($nodes as $node) {
             $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
         }
-
         return [
             '#theme' => 'item_list',
             '#items' => $items
         ];
     }
-
     public function listDossierWithNotPremiumArticles()
     {
         $dids = \Drupal::EntityQuery('node')
@@ -200,23 +187,19 @@ class PremiumController extends ControllerBase
             ->execute();
         $nodes = Node::loadMultiple($dids);
         $items = [];
-
         /* @var $node Node
          */
         foreach ($nodes as $node) {
             $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
         }
-
         return [
             '#theme' => 'item_list',
             '#items' => $items
         ];
     }
-
     public function listPremiumDossiersOrDossiersWithPremiumArticles()
     {
         $query = \Drupal::EntityQuery('node');
-
         $condition_or = $query->orConditionGroup();
         $condition_or->condition('field_tags.entity.name', 'premium');
         $condition_or->condition('field_articles.entity.field_tags.entity.name', 'premium');
@@ -224,17 +207,13 @@ class PremiumController extends ControllerBase
         $query->condition('status', 1);    //publié
         $query->condition($condition_or);
         $nids = $query->execute();
-
         $nodes = Node::loadMultiple($nids);
-
         $items = [];
-
         /* @var $node Node
          */
         foreach ($nodes as $node) {
             $items[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'default');
         }
-
         return [
             '#theme' => 'item_list',
             '#items' => $items

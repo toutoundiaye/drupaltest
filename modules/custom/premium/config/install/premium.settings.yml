@@ -5,4 +5,8 @@ premium_cache:
   message: 'Quid enim tam absurdum quam delectari multis inanimis rebus, ut honore,
   ut gloria, ut aedificio, ut vestitu cultuque corporis, animante virtute praedito,
   eo qui vel amare vel, ut ita dicam, redamare possit, non admodum delectari?'
-  
+  # image: 'public://pictures/chatbotte.png'
+premium_promotion:
+  message: 'animante virtute praedito,eo qui vel amare vel, ut ita dicam, redamare possit'  
+  debut: '2018-03-28'
+  fin: '2018-03-29'

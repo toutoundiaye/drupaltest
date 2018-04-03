@@ -224,8 +224,21 @@ class PremiumController extends ControllerBase
         ];
     }
 
-    public function getPromotion()
+    public static function getPromotion()
     {
-        return new JsonResponse(array('message' => $name));
+        $config = \Drupal::config('premium.settings');
+        $message = $config->get('message')['value'];
+        // Structure de la réponse.
+        $response = [
+            'error' => FALSE,
+            'message' =>''
+        ];
+        // Vérifie que la configuration n'est pas vide, qu'on a à minima un message.
+        if (empty($message)) {
+            $response['error'] = TRUE;
+        } else {
+            $response['message'] = $message;
+        }
+        return new JsonResponse($response);
     }
 }

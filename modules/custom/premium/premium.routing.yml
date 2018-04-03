@@ -107,16 +107,16 @@ cacheForm:
 promotionForm:
   path: '/promotionform'
   defaults:
-    _title: 'Les promotions'
+    _title: 'Nouvelle promotion'
     _form: '\Drupal\premium\Form\PromotionForm'
   requirements:
     _permission: 'access content'
 
 premium.getPromotion:
-  path: 'api/promotion'
+  path: '/api/promotion'
   defaults:
     _controller: '\Drupal\premium\Controller\PremiumController::getPromotion'
-    _title: 'une promo ?'
+    _title: 'Les promotions'
   requirements:
     _permission: 'access content'
     

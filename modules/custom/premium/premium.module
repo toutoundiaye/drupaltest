@@ -65,17 +65,30 @@ function _custom_theme($existing, $type, $theme, $path)
 
 function premium_preprocess_field(&$variables) 
 {
-    
-  //  $config =  \Drupal::config('premium.settings');
     $field =  $variables['element'];
     if ($field['#field_name'] === 'field_promotion') {
-       $config = \Drupal::config('premium.settings');
-       // ksm($variables['items']);
-        $variables['promotion'] = $variables['items'][0]['content']['#text'];
-       // ksm($variables['promotion']);
-        $variables['promotion'] = $config->get('premium_promotion.message');
-       // ksm($variables['promotion']);
-  }
-    return $variables;
+        $date_actuelle = time();
+        // Charge la configuration.
+        $config = \Drupal::config('premium.settings');
+        $date_debut = $config->get('debut_promotion');
+        $date_fin = $config->get('fin_promotion');
+        //on definit un max-age par defaut
+        $max_age = -1;
+        
+        if ($date_actuelle > $date_debut && $date_actuelle < $date_fin){
+            $variables['promotion'] = $config->get('message')['value'];
+            $max_age =  $date_fin - $date_actuelle;
+        } elseif ($date_actuelle < $date_debut) {
+            $max_age =  $date_debut - $date_actuelle;
+        }
+
+        //on met en place le cache
+        $variables['#cache'] = [
+            'tags' => ['PREMIUM-PROMOTION'],
+            'max-age' => $max_age,
+        ];
+        
+    }
+    //return $variables;
 
 }

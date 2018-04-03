@@ -8,5 +8,5 @@ premium_cache:
   # image: 'public://pictures/chatbotte.png'
 premium_promotion:
   message: 'la promotion du siécle'  
-  debut: '2018-03-28'
-  fin: '2018-03-29'
+  debut: '04/03/2018'
+  fin: '04/05/2018'

@@ -3,7 +3,7 @@
     $(document).ready(function() {
         var uri = '/api/promotion'
 $.ajax({
-    url: url,
+    url: uri,
     type: 'GET',
     data: {
           'message[]': message,
